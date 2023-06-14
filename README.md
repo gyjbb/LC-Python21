@@ -5,8 +5,9 @@
 June 13, 2023  4h
 
 Congratulations!\
-This is the 21th day for leetcode python study. Today we will learn more about the backtracking!\
-The challenges today are about ~~need to delete later~~.
+This is the 21sh day for leetcode python study. Today we will learn about the backtracking!\
+The challenges today are about the theory of backtracking and how to use backtracking to solve combination problems. Similar to the 3 steps in recursion, backtracking will firstly use a for loop to build up the width of the tree structure, which is iterating through the elements in the original array. Then will use recursion to construct the depth of the tree.\
+Branch cutting can help us to save the processing time.
 
 
 ## Theory of backtracking

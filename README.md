@@ -37,6 +37,7 @@ class Solution:
             result.append(path[:])
             return  
         for i in range(startIndex, n + 1):  # layers of loop is n, width of the tree
+        #for i in range(startIndex, n - (k - len(path)) + 2): branch cutting
             path.append(i)  # process the node
             self.backtracking(n, k, i + 1, path, result)    #depth of the tree
             path.pop()  # backtracking, undo the node proccessed

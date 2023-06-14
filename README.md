@@ -1,6 +1,6 @@
 # LC-Python21
 
-## Theory of backtracking
+## Theory of backtracking, 77. Combinations
 
 June 13, 2023  4h
 
@@ -19,8 +19,34 @@ Backtracking come together with recursion, it's under the recursion function's l
 >    return }
 
 
-##  77. 
-组合
-对着 在 回溯算法理论基础 给出的 代码模板，来做本题组合问题，大家就会发现 写回溯算法套路。
-在回溯算法解决实际问题的过程中，大家会有各种疑问，先看视频介绍，基本可以解决大家的疑惑。
-本题关于剪枝操作是大家要理解的重点，因为后面很多回溯算法解决的题目，都是这个剪枝套路。 
+##  77. Combinations
+[leetcode](https://leetcode.com/problems/combinations/)\
+The thing that needs to pay attention to is the **branch cutting**.\
+Backtracking can control the layers of loop using recursion. The number of loops' layers are the number of recursion we need.\
+All the results are in the leaf nodes.\
+3 steps of backtracking is the same as recursion.
+```python
+# ways 1:
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        result = []  
+        self.backtracking(n, k, 1, [], result)
+        return result
+    def backtracking(self, n, k, startIndex, path, result):
+        if len(path) == k:
+            result.append(path[:])
+            return  
+        for i in range(startIndex, n + 1):  # layers of loop is n, width of the tree
+            path.append(i)  # process the node
+            self.backtracking(n, k, i + 1, path, result)    #depth of the tree
+            path.pop()  # backtracking, undo the node proccessed
+```
+
+
+
+
+
+
+
+
+
